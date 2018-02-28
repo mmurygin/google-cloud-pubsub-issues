@@ -15,12 +15,9 @@
     ```
 
 ## Flow control issue
-    ```bash
+
     GOOGLE_PROJECT=your-project-id GOOGLE_APPLICATION_CREDENTIALS=path-to-credentials npm run flow-control
-    ```
 
 ## Ack Deadline issue
 
-    ```bash
     GOOGLE_PROJECT=your-project-id GOOGLE_APPLICATION_CREDENTIALS=path-to-credentials npm run ack-deadline
-    ```
