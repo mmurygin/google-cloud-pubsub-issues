@@ -35,7 +35,10 @@ describe('broken ack deadline', function() {
                 // we use Pubsub.v1.Subscription client because of this issue:
                 // https://github.com/googleapis/nodejs-pubsub/issues/6
                 return client.createSubscription(createSubscriptionRequest);
-            });
+            })
+            .then(() => {
+                console.log('Topic and subscription were created');
+            })
     });
 
     it('should respect ack deadline', function (done) {
@@ -49,11 +52,14 @@ describe('broken ack deadline', function() {
 
         let firstCallTime;
         let secondCallTime;
-        function messageHandler(message) {
+        function messageHandler() {
             if (!firstCallTime) {
                 firstCallTime = Date.now();
+                console.log('Message handler first call. Save time and continue');
                 return;
             }
+
+            console.log('Message handler second call. Lets do an assertion');
 
             secondCallTime = Date.now();
 

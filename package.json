@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test --timeout 600000 --exit",
+    "ack-deadline": "mocha test/ack-deadline-issue.js --timeout 180000 --exit",
+    "flow-control": "mocha test/flow-control-issue.js --timeout 600000 --exit",
     "lint": "eslint ."
   },
   "keywords": [],
