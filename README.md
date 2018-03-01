@@ -13,6 +13,10 @@
     ```bash
     GOOGLE_PROJECT=your-project-id GOOGLE_APPLICATION_CREDENTIALS=path-to-credentials npm test
     ```
+## Lease message issue
+
+    GOOGLE_PROJECT=your-project-id GOOGLE_APPLICATION_CREDENTIALS=path-to-credentials npm run lease-message
+
 
 ## Flow control issue
 
