@@ -21,7 +21,9 @@ describe('lease message issue', () => {
     });
 
     it('should not redeliver message until subscription is closed', function (done) {
-        subscription.on('error', done);
+        subscription.on('error', error => {
+            console.error(error);
+        });
 
         const onMessage = sinon.spy();
         subscription.on('message', onMessage);

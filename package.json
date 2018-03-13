@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@google-cloud/pubsub": "^0.16.4",
+    "@google-cloud/pubsub": "git://github.com/callmehiphop/nodejs-pubsub.git#dg--flow-control-fixes",
     "uuid": "^3.2.1"
   },
   "devDependencies": {
