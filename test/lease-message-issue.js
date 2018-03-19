@@ -3,6 +3,7 @@
 const uuid = require('uuid').v4;
 const pubsub = require('@google-cloud/pubsub')();
 const sinon = require('sinon');
+const moment = require('moment');
 
 function getRandomName() {
     return `test-pubsub-issue-${uuid()}`;
@@ -23,7 +24,12 @@ describe('lease message issue', () => {
     it('should not redeliver message until subscription is closed', function (done) {
         subscription.on('error', done);
 
-        const onMessage = sinon.spy();
+        const handlerSpy = sinon.spy();
+
+        const onMessage = () => {
+            console.log(moment().format('hh:mm:ss'));
+            handlerSpy();
+        };
         subscription.on('message', onMessage);
 
         topic
@@ -33,7 +39,7 @@ describe('lease message issue', () => {
 
         setTimeout(() => {
             try {
-                sinon.assert.calledOnce(onMessage);
+                sinon.assert.calledOnce(handlerSpy);
                 done();
             } catch (error) {
                 done(error);
