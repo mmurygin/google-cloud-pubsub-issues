@@ -38,7 +38,7 @@ describe('lease message issue', () => {
             } catch (error) {
                 done(error);
             }
-        }, 120000);
+        }, 600000);
     });
 
     afterEach(() => {

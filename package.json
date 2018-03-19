@@ -7,14 +7,14 @@
     "test": "mocha test --timeout 600000 --exit",
     "ack-deadline": "mocha test/ack-deadline-issue.js --timeout 180000 --exit",
     "flow-control": "mocha test/flow-control-issue.js --timeout 600000 --exit",
-    "lease-message": "mocha test/lease-message-issue.js --timeout 150000 --exit",
+    "lease-message": "mocha test/lease-message-issue.js --timeout 630000 --exit",
     "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@google-cloud/pubsub": "^0.16.4",
+    "@google-cloud/pubsub": "git://github.com/callmehiphop/nodejs-pubsub.git#dg--write-latency",
     "uuid": "^3.2.1"
   },
   "devDependencies": {
